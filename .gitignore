@@ -1,0 +1,53 @@
+# -----------------------------
+# Python Bytecode & Caches
+# -----------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# -----------------------------
+# Virtual Environments
+# -----------------------------
+.venv/
+venv/
+env/
+
+# -----------------------------
+# SQLite Database Files
+# (Your database changes constantly — do NOT commit it)
+# -----------------------------
+*.db
+*.sqlite3
+
+# If you want to explicitly ignore your cert.db:
+database/cert.db
+
+# -----------------------------
+# Exported CSVs
+# Exports should not be committed; they are runtime artifacts
+# -----------------------------
+output/*.csv
+
+# -----------------------------
+# System / IDE Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# JetBrains / PyCharm project files
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Windows junk
+desktop.ini
+
+# -----------------------------
+# Logs
+# -----------------------------
+*.log
+logs/
