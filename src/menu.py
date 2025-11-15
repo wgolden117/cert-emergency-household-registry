@@ -1,6 +1,6 @@
 from database_manager import DatabaseManager
 from record_manager import RecordManager
-
+from view_records import ViewRecordsManager
 
 class Menu:
     def __init__(self):
@@ -35,7 +35,8 @@ class Menu:
     # ---- Placeholder methods for future features ---- #
 
     def view_records(self):
-        print("\n[View Records] Feature not implemented yet.\n")
+        manager = ViewRecordsManager(self.db)
+        manager.display_records()
 
     def add_record(self):
         manager = RecordManager(self.db)
