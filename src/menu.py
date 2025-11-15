@@ -1,4 +1,6 @@
 from database_manager import DatabaseManager
+from record_manager import RecordManager
+
 
 class Menu:
     def __init__(self):
@@ -36,7 +38,8 @@ class Menu:
         print("\n[View Records] Feature not implemented yet.\n")
 
     def add_record(self):
-        print("\n[Add Record] Feature not implemented yet.\n")
+        manager = RecordManager(self.db)
+        manager.add_new_record()
 
     def import_records(self):
         print("\n[Import Records] Feature not implemented yet.\n")
