@@ -52,5 +52,14 @@ class ViewRecordsManager:
         for label, value in zip(fields, record):
             print(f"{label}: {value}")
 
-        print("\nPress Enter to return to the menu.")
-        input()
+        print("\nOptions:")
+        print("1. Edit this record")
+        print("Press Enter to return to the menu")
+
+        choice = input("Select an option: ").strip()
+
+        if choice == "1":
+            from record_manager import RecordManager
+            manager = RecordManager(self.db)
+            manager.edit_record(record)
+

@@ -1,54 +1,48 @@
 import re
 
-def validate_integer(prompt):
-    while True:
-        value = input(prompt).strip()
-        if value.isdigit():
-            return int(value)
-        print("Invalid input. Please enter a valid number.")
+def validate_integer(value):
+    value = value.strip()
+    if value.isdigit():
+        return int(value)
+    raise ValueError("Invalid integer")
 
-def validate_yes_no(prompt, optional=False):
-    while True:
-        value = input(prompt).strip().lower()
+def validate_yes_no(value, optional=False):
+    value = value.strip().lower()
 
-        if optional and value == "":
-            return None
+    if optional and value == "":
+        return None
 
-        if value in ("yes", "no"):
-            return value
+    if value in ("yes", "no"):
+        return value
 
-        print("Invalid input. Please enter 'yes' or 'no'.")
+    raise ValueError("Invalid yes/no")
 
-def validate_phone(prompt, optional=False):
-    while True:
-        value = input(prompt).strip()
+def validate_phone(value, optional=False):
+    value = value.strip()
 
-        if optional and value == "":
-            return None
+    if optional and value == "":
+        return None
 
-        if re.fullmatch(r"\d{10}", value.replace("-", "").replace(" ", "")):
-            return value
+    digits = value.replace("-", "").replace(" ", "")
+    if re.fullmatch(r"\d{10}", digits):
+        return value
 
-        print("Invalid phone number. Enter 10 digits or leave blank.")
+    raise ValueError("Invalid phone number")
 
-def validate_email(prompt, optional=False):
-    while True:
-        value = input(prompt).strip()
+def validate_email(value, optional=False):
+    value = value.strip()
 
-        if optional and value == "":
-            return None
+    if optional and value == "":
+        return None
 
-        if re.fullmatch(r"[^@]+@[^@]+\.[^@]+", value):
-            return value
+    if re.fullmatch(r"[^@]+@[^@]+\.[^@]+", value):
+        return value
 
-        print("Invalid email format. Try again or leave blank.")
+    raise ValueError("Invalid email")
 
-def validate_address(prompt):
-    while True:
-        value = input(prompt).strip()
+def validate_address(value):
+    value = value.strip()
+    if re.fullmatch(r"\d+ .+, .+, [A-Z]{2} \d{5}", value):
+        return value
+    raise ValueError("Invalid address format")
 
-        # Very basic format check: number + street + commas
-        if re.fullmatch(r"\d+ .+, .+, [A-Z]{2} \d{5}", value):
-            return value
-
-        print("Invalid address format. Expected: '7001 E Williams Field Rd, Mesa, AZ 85212'")
