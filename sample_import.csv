@@ -1,0 +1,5 @@
+adults,children,pets,dogs,critical_meds,meds_need_refrigeration,special_needs,propane_tank,natural_gas,address,phone,email,medical_training,knows_neighbors,has_spare_key,wants_newsletter,allow_contact_non_disaster
+2,1,yes,no,no,no,yes,no,yes,123 Maple St Phoenix AZ 85004,555-123-4567,test1@example.com,yes,no,yes,no,yes
+4,0,no,no,no,no,no,no,yes,45 Oak Rd Mesa AZ 85212,555-321-8314,test2@example.com,no,no,yes,yes,no
+3,2,yes,yes,yes,yes,no,yes,no,94 Palm St Tempe AZ 85281,555-864-8735,test3@example.com,yes,yes,yes,no,no
+2,0,yes,no,yes,no,no,no,yes,28 Kitty Dr Tempe AZ 85281,555-943-7514,,no,no,yes,no,no

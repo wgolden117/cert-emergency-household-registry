@@ -2,6 +2,7 @@ from database_manager import DatabaseManager
 from record_manager import RecordManager
 from view_records import ViewRecordsManager
 from exporter import export_records
+from importer import import_records
 
 class Menu:
     def __init__(self):
@@ -23,7 +24,7 @@ class Menu:
             elif choice == "2":
                 self.add_record()
             elif choice == "3":
-                self.import_records()
+                import_records(self.db)
             elif choice == "4":
                 export_records(self.db)
             elif choice == "5":
@@ -43,6 +44,4 @@ class Menu:
         manager = RecordManager(self.db)
         manager.add_new_record()
 
-    def import_records(self):
-        print("\n[Import Records] Feature not implemented yet.\n")
 
