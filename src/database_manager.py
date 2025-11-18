@@ -82,3 +82,8 @@ class DatabaseManager:
 
     def close(self):
         self.connection.close()
+
+    def delete_record(self, record_id):
+        self.cursor.execute("DELETE FROM household_records WHERE id = ?", (record_id,))
+        self.connection.commit()
+

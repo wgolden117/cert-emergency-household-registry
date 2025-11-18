@@ -34,8 +34,6 @@ class Menu:
             else:
                 print("Invalid choice. Please try again.")
 
-    # ---- Placeholder methods for future features ---- #
-
     def view_records(self):
         manager = ViewRecordsManager(self.db)
         manager.display_records()
