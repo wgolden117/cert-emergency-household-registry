@@ -1,6 +1,7 @@
 from database_manager import DatabaseManager
 from record_manager import RecordManager
 from view_records import ViewRecordsManager
+from exporter import export_records
 
 class Menu:
     def __init__(self):
@@ -24,7 +25,7 @@ class Menu:
             elif choice == "3":
                 self.import_records()
             elif choice == "4":
-                self.export_records()
+                export_records(self.db)
             elif choice == "5":
                 print("Goodbye!")
                 self.db.close()
@@ -45,5 +46,3 @@ class Menu:
     def import_records(self):
         print("\n[Import Records] Feature not implemented yet.\n")
 
-    def export_records(self):
-        print("\n[Export Records] Feature not implemented yet.\n")
