@@ -87,3 +87,11 @@ class DatabaseManager:
         self.cursor.execute("DELETE FROM household_records WHERE id = ?", (record_id,))
         self.connection.commit()
 
+    def record_exists(self, address):
+        self.cursor.execute(
+            "SELECT id FROM household_records WHERE address = ?",
+            (address,)
+        )
+        return self.cursor.fetchone() is not None
+
+

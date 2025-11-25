@@ -56,5 +56,5 @@ def validate_address(value):
     value = value.strip()
     if re.fullmatch(r"\d+ .+, .+, [A-Z]{2} \d{5}", value):
         return value
-    raise ValueError("Invalid address format")
+    raise ValueError("Invalid address format: e.g, 111 street name, city, state zip")
 

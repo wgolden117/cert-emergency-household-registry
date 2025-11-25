@@ -70,6 +70,12 @@ def import_records(db_manager):
                     # Address: NO validation (Option B)
                     address = normalize(row["address"])
 
+                    # Skip duplicate addresses
+                    if db_manager.record_exists(address):
+                        print(f"Skipping row: A record with address '{address}' already exists.")
+                        fail_count += 1
+                        continue
+
                     # Optional fields
                     phone = validate_phone(row["phone"], optional=True)
                     email = validate_email(row["email"], optional=True)
@@ -100,6 +106,7 @@ def import_records(db_manager):
                     }
 
                     db_manager.insert_record(record_data)
+
                     success_count += 1
 
                 except Exception as e:
